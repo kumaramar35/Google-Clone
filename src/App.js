@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './photos/Home';
+import {Route,Routes,BrowserRouter,useRouteMatch, useParams} from "react-router-dom"
+import SearchPage from './photos/SearchPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/search' element={<SearchPage></SearchPage>}> </Route>
+      <Route path='/' element={<Home></Home>}></Route>
+    </Routes>
+
+     
+      {/* Home page that will see on 1st */}
+    
+      {/* Search page(that is the results page) */}
+      </BrowserRouter>
     </div>
   );
 }
